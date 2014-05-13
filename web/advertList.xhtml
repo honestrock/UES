@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" 
+      xmlns:k="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui"
+     >
+    
+    <h:head>
+        <script language="javascript" src="/showcase-labs/syntaxhighlighter/scripts/sh.js"></script>
+        <script language="javascript">
+            dp.SyntaxHighlighter.ClipboardSwf = '/showcase-labs/syntaxhighlighter/scripts/clipboard.swf';
+            dp.SyntaxHighlighter.HighlightAll('code');
+        </script>
+
+    </h:head>
+    <h:body >
+        <p:accordionPanel multiple="true" value="#{duyuruListeleme.duyuruGetir()}" var="liste">
+            
+                <p:tab  title="#{liste.advertTitle}" >
+                <h:panelGrid  cellpadding="10">
+                    <p:graphicImage value="/img/#{liste.imageUrl}"  style="width: 100%; height: 100%"/>
+                </h:panelGrid>
+                <hr/>
+                <h:panelGrid columns="10" cellpadding="10">
+                    <h:outputText
+                        value="#{liste.advertCont}" />
+                </h:panelGrid>
+            </p:tab>
+            
+        </p:accordionPanel>
+        
+        
+       
+        
+    </h:body>
+</html>
+
